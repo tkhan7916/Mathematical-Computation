@@ -1,2 +1,2 @@
 # Mathematical-Computation
-Math functions and programs written in R for class
+Math functions and programs written in R
