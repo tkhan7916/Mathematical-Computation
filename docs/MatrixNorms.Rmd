@@ -73,7 +73,7 @@ inf.norm <- function(A) {
 
 ---
 
-The main Matrix Norm function is as follows:
+The Matrix Norm function to select the type of norm is as follows:
 
 ```{r}
 mat.norm <- function(A, type=c("one", "inf", "F")) {
@@ -87,4 +87,8 @@ mat.norm <- function(A, type=c("one", "inf", "F")) {
 
 ---
 
+File: [MatrixNorm.R](https://github.com/tkhan7916/mathematical-computation/blob/main/MatrixNorm.R)
+
  Homework 5 for MATH 366: _Applied Mathematical Computation_
+ 
+ Tousif Khan
