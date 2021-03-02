@@ -4,15 +4,16 @@ output:
   pdf_document: default
   html_notebook: default
 ---
+
 A "matrix norm" is a way of assigning a numerical measurement to a matrix. There are different types of matrix norms, each useful in their own context.
 
 ---
 
-The _Frobenius norm_ is defined as follows:
+The _Frobenius norm_ is defined as:
 
-#### $$||A||_{F} = \sqrt{\displaystyle \sum_{i = 1}^{n}\sum_{j=1}^{m}(A_{i,j})^2}$$
+### $$||A||_{F} = \sqrt{\displaystyle \sum_{i = 1}^{n}\sum_{j=1}^{m}(A_{i,j})^2}$$
 
-The function for the _Frobenius norm_ is written in R as follows:
+The function for the _Frobenius norm_ written in R:
 
 ```{r}
 F.norm <- function(A) {
@@ -26,11 +27,11 @@ F.norm <- function(A) {
 }
 ```
 
-The _1-norm_ is defined as follows:
+The _1-norm_ is defined as:
 
-#### $$||A||_{1} = \displaystyle \max_{1 \le j \le m}(\sum_{i=1}^{n}|A_{i,j}|)$$
+### $$||A||_{1} = \displaystyle \max_{1 \le j \le m}(\sum_{i=1}^{n}|A_{i,j}|)$$
 
-The function for the _1-norm_ is written in R as follows:
+The function for the _1-norm_ written in R:
 
 ```{r}
 one.norm <- function(A) {
@@ -48,11 +49,11 @@ one.norm <- function(A) {
 }
 ```
 
-The _$\infty$-norm_ is defined as follows:
+The _$\infty$-norm_ is defined as:
 
-#### $$||A||_{\infty} = \displaystyle \max_{1 \le i \le  n}(\sum_{j=1}^{n}|A_{i,j}|)$$
+### $$||A||_{\infty} = \displaystyle \max_{1 \le i \le  n}(\sum_{j=1}^{n}|A_{i,j}|)$$
 
-The function for the _$\infty$-norm_ is written in R as follows:
+The function for the _$\infty$-norm_ written in R:
 
 ```{r}
 inf.norm <- function(A) {
@@ -72,7 +73,7 @@ inf.norm <- function(A) {
 
 ---
 
-The main Matrix Norm function is written in R as follows:
+The main Matrix Norm function is as follows:
 
 ```{r}
 mat.norm <- function(A, type=c("one", "inf", "F")) {
