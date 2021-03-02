@@ -1,6 +1,8 @@
 ---
 title: "Matrix Norms"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 A "matrix norm" is a way of assigning a numerical measurement to a matrix. There are different types of matrix norms, each useful in their own context.
 
