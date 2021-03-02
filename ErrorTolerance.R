@@ -6,7 +6,7 @@ et = function(A, eps=0.02) {
   m = ncol(A)
   for (i in 1:n) {
     for (j in 1:m) {
-      if (abs((A[i,j]) < eps)) {
+      if (abs((A[i,j])) < eps) {
         A[i,j] = 0
       }
     }

@@ -1,0 +1,87 @@
+---
+title: "Matrix Norms"
+output: html_notebook
+---
+A "matrix norm" is a way of assigning a numerical measurement to a matrix. There are different types of matrix norms, each useful in their own context.
+
+---
+
+The _Frobenius norm_ is defined as follows:
+
+#### $$||A||_{F} = \sqrt{\displaystyle \sum_{i = 1}^{n}\sum_{j=1}^{m}(A_{i,j})^2}$$
+
+The function for the _Frobenius norm_ is written in R as follows:
+
+```{r}
+F.norm <- function(A) {
+  sum_squares = 0
+  for (i in 1:nrow(A)) {
+    for (j in 1:ncol(A)) {
+      sum_squares = sum_squares + A[i,j]^2
+    }
+  }
+  return(sqrt(sum_squares))
+}
+```
+
+The _1-norm_ is defined as follows:
+
+#### $$||A||_{1} = \displaystyle \max_{1 \le j \le m}(\sum_{i=1}^{n}|A_{i,j}|)$$
+
+The function for the _1-norm_ is written in R as follows:
+
+```{r}
+one.norm <- function(A) {
+  n = nrow(A)
+  m = ncol(A)
+  col_sums = vector(length=m)
+  for (j in 1:m) {
+    sum = 0
+    for (i in 1:n) {
+      sum = sum + abs(A[i,j])
+    }
+    col_sums[j] = sum
+  }
+  return(max(col_sums))
+}
+```
+
+The _$\infty$-norm_ is defined as follows:
+
+#### $$||A||_{\infty} = \displaystyle \max_{1 \le i \le  n}(\sum_{j=1}^{n}|A_{i,j}|)$$
+
+The function for the _$\infty$-norm_ is written in R as follows:
+
+```{r}
+inf.norm <- function(A) {
+  n = nrow(A)
+  m = ncol(A)
+  row_sums = vector(length=n)
+  for (i in 1:n) {
+    sum = 0
+    for (j in 1:m) {
+      sum = sum + abs(A[i,j])
+    }
+    row_sums[i] = sum
+  }
+  return(max(row_sums))
+}
+```
+
+---
+
+The main Matrix Norm function is written in R as follows:
+
+```{r}
+mat.norm <- function(A, type=c("one", "inf", "F")) {
+  switch (type,
+    "one" = one.norm(A),
+    "inf" = inf.norm(A),
+    "F" = F.norm(A)
+  )
+}
+```
+
+---
+
+ Homework 5 for MATH 366: _Applied Mathematical Computation_
